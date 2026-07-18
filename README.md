@@ -30,11 +30,11 @@ Direction 2 (legislative observation + public-comment support) is delivered by *
 
 ISIC A0116 (fibre crops) · ISCO 6111/7318 · UNSPSC 10–11.
 
-## Cells (langgraph→WASM; Murakumo-only; `.solve()` raises at R0)
+## Cells (native CLJC state machines; Murakumo-only; `solve` raises at R0)
 
 - **heritage_ingest** (dan) — heritage records → kotoba EAVT (operator-gated, G8).
 - **fiber_provenance** (naphtali — coded reference cell) — cultivar→fibre-use provenance with the
-  **THC-class screen** (`ValueError` on any psychoactive input; G1 enforcement point).
+  **THC-class screen** (`ExceptionInfo` on any psychoactive input; G1 enforcement point).
 - **cultivation_license_plan** (gad) — member-principal, server-keyless, outward-gated low-THC
   栽培者免許 design (G4/G5/G8).
 - **rite_supply** (asher) — maps ritual-artifact demand (注連縄/大幣) to licensed fibre supply
@@ -60,13 +60,9 @@ facilitates unlicensed cultivation · N5 no high-THC seed/strain trafficking.
 
 ## Build / test
 
-```
-cd methods && PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest test_analyze.py   # EDN load + THC-class gate + report
-python3 analyze.py && head out/heritage-report.md                                  # cultivar THC-class breakdown
-cd ../cells && PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest test_state_machines.py  # fiber_provenance screen + license plan
-```
+Run the complete standalone suite with `bb test`.
 
-R0 = design + wired `analyze.py` heritage report + `fiber_provenance` THC-class screen (coded) +
+R0 = design + native CLJC heritage analysis + `fiber_provenance` THC-class screen (coded) +
 `cultivation_license_plan` member-principal state machine + `:representative` heritage seed. The
 THC-class invariant is enforced in three places (schema, lexicon `const`, code). No live cultivation,
 licence filing, or ingest; all such are Council Lv6+ + operator gated (G8).
@@ -74,7 +70,7 @@ licence filing, or ingest; all such are Council Lv6+ + operator gated (G8).
 ## Do not
 
 - Do not add a `:psychoactive` thc-class, a recreational-cannabis catalog, or any consumption/dosing
-  guidance — G1/G2 (`fiber_provenance` raises `ValueError`; the schema cannot represent it).
+  guidance — G1/G2 (`fiber_provenance` raises `ExceptionInfo`; the schema cannot represent it).
 - Do not make nusa take a 解禁-推進/反対 position or run advocacy/lobbying — G3 / §1.12 / 1 SBT = 1 vote.
   Route legislative facts to danjo, public-comment support to moushibumi (both neutral).
 - Do not manufacture cannabis-derived medicine here — G10 / §薬機法 (→ yakushi/iyashi/mitate).

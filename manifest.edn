@@ -16,7 +16,7 @@
  :actor/charter-rider {:rider/version "2.0" :rider/applied true}
 
  :actor/gates
- [{:gate/id "G1" :gate/name "low-thc-fiber-and-ritual-only" :gate/req "only 繊維型/神事用 低THC 大麻草; cultivar :thc-class ∈ {:fiber, :low-thc}; :psychoactive is NOT a representable value (schema + lexicon const + analyze.py); recreational/high-THC excluded by construction"}
+ [{:gate/id "G1" :gate/name "low-thc-fiber-and-ritual-only" :gate/req "only 繊維型/神事用 低THC 大麻草; cultivar :thc-class ∈ {:fiber, :low-thc}; :psychoactive is NOT a representable value (schema + lexicon const + native analyzer); recreational/high-THC excluded by construction"}
   {:gate/id "G2" :gate/name "non-recreational" :gate/req "never facilitates 嗜好使用; emits no consumption/dosing guidance; respects the 使用罪 (THC use criminalized, 令和5年法律第84号)"}
   {:gate/id "G3" :gate/name "non-adjudicating-political-neutral" :gate/req "records cultural + legislative FACTS only; legal characterization → danjo/chigiri; takes NO 推進/反対 stance on 解禁論 (§1.12 / 1 SBT = 1 vote)"}
   {:gate/id "G4" :gate/name "member-principal-no-fiat-inflow" :gate/req "栽培者免許 fees never from religious-corp funds or a fiat processor; member-principal via okaimono assisted-checkout (ADR-2606012100); nusa never licensee-of-record / funder"}
@@ -35,11 +35,11 @@
   {:ng/id "N5" :ng/req "no trafficking of high-THC seed / strains"}]
 
  :actor/cells
- [{:cell/id "heritage_ingest"         :cell/kind :langgraph :cell/runtime :wasm :cell/node "dan"}
-  {:cell/id "fiber_provenance"        :cell/kind :langgraph :cell/runtime :wasm :cell/node "naphtali"}
-  {:cell/id "cultivation_license_plan" :cell/kind :langgraph :cell/runtime :wasm :cell/node "gad"}
-  {:cell/id "rite_supply"             :cell/kind :langgraph :cell/runtime :wasm :cell/node "asher"}
-  {:cell/id "observation_bridge"      :cell/kind :langgraph :cell/runtime :wasm :cell/node "issachar"}]
+ [{:cell/id "heritage_ingest"         :cell/kind :state-machine :cell/runtime :cljc :cell/node "dan"}
+  {:cell/id "fiber_provenance"        :cell/kind :state-machine :cell/runtime :cljc :cell/node "naphtali"}
+  {:cell/id "cultivation_license_plan" :cell/kind :state-machine :cell/runtime :cljc :cell/node "gad"}
+  {:cell/id "rite_supply"             :cell/kind :state-machine :cell/runtime :cljc :cell/node "asher"}
+  {:cell/id "observation_bridge"      :cell/kind :state-machine :cell/runtime :cljc :cell/node "issachar"}]
 
  :actor/lex
  [{:lex/id "heritageRecord"}

@@ -1,0 +1,11 @@
+{:catalog/version 1
+ :catalog/canonical-format :edn
+ :actor :nusa
+ :contracts
+ [{:name :cultivation-license-plan :canonical/path "contracts/lexicons/cultivationLicensePlan.edn" :wire/path "wire/contracts/lexicons/cultivationLicensePlan.json"}
+  {:name :fiber-provenance :canonical/path "contracts/lexicons/fiberProvenance.edn" :wire/path "wire/contracts/lexicons/fiberProvenance.json"}
+  {:name :hemp-cultivar :canonical/path "contracts/lexicons/hempCultivar.edn" :wire/path "wire/contracts/lexicons/hempCultivar.json"}
+  {:name :heritage-record :canonical/path "contracts/lexicons/heritageRecord.edn" :wire/path "wire/contracts/lexicons/heritageRecord.json"}
+  {:name :ritual-artifact :canonical/path "contracts/lexicons/ritualArtifact.edn" :wire/path "wire/contracts/lexicons/ritualArtifact.json"}]
+ :identity [{:kind :did-document :wire/path "wire/identity/did.json"}
+            {:kind :actor-profile :wire/path "wire/identity/profile.json"}]}

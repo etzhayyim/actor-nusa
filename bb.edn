@@ -1,0 +1,13 @@
+{:paths ["src" "test"]
+ :tasks
+ {test {:doc "Run the standalone Nusa CLJC suite"
+        :requires ([clojure.test]
+                   [nusa.cells.test-state-machine]
+                   [nusa.methods.test-analyze]
+                   [nusa.methods.test-charter-gates]
+                   [nusa.murakumo-test])
+        :task (clojure.test/run-tests
+               'nusa.cells.test-state-machine
+               'nusa.methods.test-analyze
+               'nusa.methods.test-charter-gates
+               'nusa.murakumo-test)}}}
