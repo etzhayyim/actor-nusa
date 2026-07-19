@@ -1,54 +1,46 @@
 {
-  "lexicon": 1,
-  "id": "com.etzhayyim.nusa.heritageRecord",
-  "defs": {
-    "main": {
-      "type": "record",
-      "key": "tid",
-      "record": {
-        "type": "object",
-        "required": [
-          "eventId",
-          "name",
-          "sourcing"
-        ],
-        "properties": {
-          "eventId": {
-            "type": "string"
+  "lexicon" : 1,
+  "id" : "com.etzhayyim.nusa.heritageRecord",
+  "defs" : {
+    "main" : {
+      "type" : "record",
+      "key" : "tid",
+      "record" : {
+        "type" : "object",
+        "required" : [ "eventId", "name", "sourcing" ],
+        "properties" : {
+          "eventId" : {
+            "type" : "string"
           },
-          "name": {
-            "type": "string"
+          "name" : {
+            "type" : "string"
           },
-          "usesArtifact": {
-            "type": "array",
-            "items": {
-              "type": "string"
+          "usesArtifact" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             },
-            "description": "→ ritualArtifact.riteId"
+            "description" : "→ ritualArtifact.riteId"
           },
-          "lineage": {
-            "type": "array",
-            "items": {
-              "type": "string"
+          "lineage" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
             },
-            "description": "→ provisioning lineage id (e.g. imbe.awa)"
+            "description" : "→ provisioning lineage id (e.g. imbe.awa)"
           },
-          "asOf": {
-            "type": "string",
-            "description": "non-eschatological history marker; no final-state datom"
+          "asOf" : {
+            "type" : "string",
+            "description" : "non-eschatological history marker; no final-state datom"
           },
-          "nonAdjudicatingNotice": {
-            "type": "boolean",
-            "const": true,
-            "description": "G3 — heritage/legislative facts recorded as facts; no advocacy stance"
+          "nonAdjudicatingNotice" : {
+            "type" : "boolean",
+            "const" : true,
+            "description" : "G3 — heritage/legislative facts recorded as facts; no advocacy stance"
           },
-          "sourcing": {
-            "type": "string",
-            "enum": [
-              "representative",
-              "synthesized",
-              "verified"
-            ]
+          "sourcing" : {
+            "type" : "string",
+            "enum" : [ "representative", "synthesized", "verified" ]
           }
         }
       }
