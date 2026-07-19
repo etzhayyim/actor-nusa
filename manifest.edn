@@ -41,9 +41,9 @@
   {:cell/id "rite_supply"             :cell/kind :state-machine :cell/runtime :cljc :cell/node "asher"}
   {:cell/id "observation_bridge"      :cell/kind :state-machine :cell/runtime :cljc :cell/node "issachar"}]
 
- :actor/lex
- [{:lex/id "heritageRecord"}
-  {:lex/id "hempCultivar"}
-  {:lex/id "ritualArtifact"}
-  {:lex/id "cultivationLicensePlan"}
-  {:lex/id "fiberProvenance"}]}
+ :actor/lexicons
+ ["com.etzhayyim.nusa.heritageRecord"
+  "com.etzhayyim.nusa.hempCultivar"
+  "com.etzhayyim.nusa.ritualArtifact"
+  "com.etzhayyim.nusa.cultivationLicensePlan"
+  "com.etzhayyim.nusa.fiberProvenance"]}
