@@ -2,6 +2,14 @@
 
 **Tier-B actor · DID `did:web:etzhayyim.com:actor:nusa` · ADR-2606039800 · R0 scaffold**
 
+Canonical repository: `etzhayyim/actor-nusa`.
+
+Within the Tamaki artificial organism, nusa is the ritual-hemp heritage and
+licensed low-THC supply-planning organ. It cannot represent psychoactive
+cultivation, give consumption or medical guidance, advocate a legalization
+position, fund a licence, or become the licensee; live filings and cultivation
+remain member-principal, Council-, operator-, and signature-gated.
+
 幣 (*ōnusa*) is the hemp purification wand of Shinto 祓 (*harae*) — the fibre of
 *cleansing*. nusa datafies Japan's **ritual + industrial hemp (麻) heritage** and designs the
 **low-THC cultivation-revival** that the 2023 reform reopened — and it does so along the only
