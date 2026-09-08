@@ -12,7 +12,7 @@
     - every cultivation-license design is member-principal / serverless / outward-gated (G4/G5/G8)
     - the rendered report carries the invariant note (psychoactive + 解禁) and heritage marker"
   (:require [clojure.test :refer [deftest is testing run-tests]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.java.io :as io]
             [nusa.methods.analyze :as analyze]))
 
@@ -80,5 +80,5 @@
     (is (str/includes? report "psychoactive"))  ; explains the invariant
     (is (str/includes? report "解禁"))           ; explicitly states no advocacy stance
     (is (or (not (str/includes? report "麁服"))   ; heritage present
-            (str/includes? (str/lower-case report) "aratae")
+            (str/includes? (str/lower report) "aratae")
             true))))

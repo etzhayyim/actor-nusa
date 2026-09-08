@@ -24,7 +24,7 @@
   House style: ':…' keyword strings stay strings (incl. all :hemp/* / :rite/*
   / :imbe/* / :hemp.license/* attrs); pure fns; file I/O only at edges via clojure.java.io.
   Portable .cljc."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── minimal EDN reader (subset: vectors [], maps {}, :keyword, \"string\", num, bool, nil)
 ;; Mirrors  _TOK / _tokens / _atom / _parse faithfully. Keywords are kept as

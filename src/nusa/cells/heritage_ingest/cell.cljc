@@ -1,7 +1,7 @@
 (ns nusa.cells.heritage-ingest.cell
   "LangGraph Pregel wrapper for the nusa 幣 heritage_ingest cell — R0 scaffold.
   Native CLJC implementation (ADR-2606039800). .solve() raises at R0."
-  (:require [clojure.string]))
+  (:require [kotoba.lang.text]))
 
 (defn solve
   [_input-state]
