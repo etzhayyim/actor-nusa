@@ -3,7 +3,7 @@
   (ADR-2606039800). fiber_provenance (G1/G2) + cultivation_license_plan (G1/G4/G5/G8) +
   observation_bridge (G3 routing); .solve() raises at R0."
   (:require [clojure.test :refer [deftest is]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [nusa.cells.fiber-provenance.state-machine :as fp]
             [nusa.cells.cultivation-license-plan.state-machine :as lic]
             [nusa.cells.observation-bridge.cell :as ob]))

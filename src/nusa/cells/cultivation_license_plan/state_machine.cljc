@@ -6,7 +6,7 @@
   authorizes it with a member signature only (the yadori reservation pattern).
   Invariants: G1 fibre/low-THC re-screen · G4 member-principal/no-fiat-inflow · G5 no-server-key ·
   G8 outward-gated. Conventions: plain map with stable string field keys; invalid input → ex-info."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def allowed-thc-classes #{"fiber" "low-thc"})
 (def allowed-funding #{"member-okaimono"})

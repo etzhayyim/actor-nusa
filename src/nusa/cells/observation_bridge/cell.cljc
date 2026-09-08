@@ -2,7 +2,7 @@
   "LangGraph Pregel wrapper for the nusa 幣 observation_bridge cell — R0 scaffold.
   Native CLJC implementation (ADR-2606039800).
   G3: routes legal/legislative questions to danjo/chigiri/moushibumi/yakushi; never adjudicates."
-  (:require [clojure.string]))
+  (:require [kotoba.lang.text]))
 
 ;; G3: where each off-actor concern is routed. nusa holds none of these itself.
 (def routes

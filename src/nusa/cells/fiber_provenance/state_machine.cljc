@@ -6,7 +6,7 @@
   screen passes (third enforcement of :thc-class after schema + lexicon const).
   G1 — :thc-class ∈ {fiber, low-thc}, else raise BEFORE a record exists. G2 — fibre uses only,
   never a consumption mode. Conventions: plain map with stable string keys; invalid input → ex-info."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def allowed-thc-classes #{"fiber" "low-thc"})
 (def allowed-fiber-uses
