@@ -4,7 +4,7 @@
  :cell/runtime :cljc
  :cell/node "naphtali"
  :cell/doc "G1 enforcement cell: a cultivar becomes a fibre-use provenance record ONLY after the THC-class screen passes. :thc-class must be fiber|low-thc; psychoactive/high-THC raises ExceptionInfo and no record is produced. Fibre uses are ritual/industrial only (G2 — no consumption mode)."
- :cell/entry "src/nusa/cells/fiber_provenance/state_machine.cljc"
+ :cell/entry "src/nusa/cells/fiber_provenance/state_machine.cljk"
  :cell/handler "FiberProvenanceCell"
  :cell/state-graph
  {:nodes [:screen :recorded] :entry :screen

@@ -4,7 +4,7 @@
  :cell/runtime :cljc
  :cell/node "dan"
  :cell/doc "Ingests the :representative ritual-hemp heritage graph (rites, artifacts, Imbe lineage, low-THC cultivars, cultivation-license design) into kotoba EAVT with as-of history (非終末論). Live ingest G8 outward-gated (operator + Council Lv6+)."
- :cell/entry "src/nusa/cells/heritage_ingest/cell.cljc"
+ :cell/entry "src/nusa/cells/heritage_ingest/cell.cljk"
  :cell/handler "HeritageIngestCell"
  :cell/llm {:provider :murakumo :endpoint "127.0.0.1:4000" :model "gemma3:4b" :charter-rider true}
  :cell/gates ["G7" "G8"]

@@ -1,0 +1,18 @@
+{:format :kotoba.cljk-origin/v1
+ :renamed-on "2026-09-11"
+ :decision "adr-2609111500-cljk-rename-all-clojure-source (com-junkawasaki/root 90-docs/adr; owner instruction 2026-09-11)"
+ :rule "value = the extension the file had before the rename. A path ending in .clj.cljk or .cljs.cljk kept it in the name because both platform files existed (or the plain target was taken)."
+ :origins
+ {"src/nusa/cells/cultivation_license_plan/state_machine.cljk" ".cljc"
+  "src/nusa/cells/fiber_provenance/state_machine.cljk" ".cljc"
+  "src/nusa/cells/heritage_ingest/cell.cljk" ".cljc"
+  "src/nusa/cells/observation_bridge/cell.cljk" ".cljc"
+  "src/nusa/cells/rite_supply/cell.cljk" ".cljc"
+  "src/nusa/cells/social_post/state_machine.cljk" ".cljc"
+  "src/nusa/methods/analyze.cljk" ".cljc"
+  "src/nusa/methods/social.cljk" ".cljc"
+  "src/nusa/murakumo.cljk" ".cljc"
+  "test/nusa/cells/test_state_machine.cljk" ".cljc"
+  "test/nusa/methods/test_analyze.cljk" ".cljc"
+  "test/nusa/methods/test_charter_gates.cljk" ".cljc"
+  "test/nusa/murakumo_test.cljk" ".cljc"}}
