@@ -68,7 +68,7 @@ facilitates unlicensed cultivation · N5 no high-THC seed/strain trafficking.
 
 ## Build / test
 
-Run the complete standalone suite with `bb test`.
+Run the complete standalone suite with `kbb -M:test`.
 
 R0 = design + native CLJC heritage analysis + `fiber_provenance` THC-class screen (coded) +
 `cultivation_license_plan` member-principal state machine + `:representative` heritage seed. The

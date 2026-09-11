@@ -19,7 +19,7 @@ the removed JSON-LD manifest or root website artifacts.
 
 ## Verification
 
-Run `bb test`. The suite must preserve the low-THC enum boundary,
+Run `kbb -M:test`. The suite must preserve the low-THC enum boundary,
 non-recreational purpose, member-principal/no-server-key constraints,
 sourcing honesty, and outward gate.
 
