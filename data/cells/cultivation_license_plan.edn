@@ -4,7 +4,7 @@
  :cell/runtime :cljc
  :cell/node "gad"
  :cell/doc "Designs an UNSIGNED, member-principal low-THC 栽培者免許 plan (大麻草の栽培の規制に関する法律) and authorizes it with a MEMBER signature only (server signature refused, G5). Member is licensee-of-record + payer via okaimono (G4, ADR-2606012100); nusa never the funder. Cultivar re-screened for THC class (G1). Live filing G8-gated."
- :cell/entry "src/nusa/cells/cultivation_license_plan/state_machine.cljc"
+ :cell/entry "src/nusa/cells/cultivation_license_plan/state_machine.cljk"
  :cell/handler "CultivationLicensePlanCell"
  :cell/state-graph
  {:nodes [:screen :plan-built :authorized] :entry :screen
