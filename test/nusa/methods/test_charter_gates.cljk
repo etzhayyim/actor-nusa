@@ -19,7 +19,7 @@
   Reads canonical EDN only. It weakens no gate; it asserts
   them. G5 IS the substrate no-server-key invariant for this actor; Murakumo-only is manifest G6."
   (:require [kotoba.test :refer [deftest is run-tests]]
-            [clojure.edn :as edn]))
+            [kotoba.lang.edn :as edn]))
 
 #?(:clj
    (do
