@@ -2,7 +2,7 @@
   "State-machine tests for nusa 幣 cells (R0). Native CLJC state-machine suite
   (ADR-2606039800). fiber_provenance (G1/G2) + cultivation_license_plan (G1/G4/G5/G8) +
   observation_bridge (G3 routing); .solve() raises at R0."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [kotoba.lang.text :as str]
             [nusa.cells.fiber-provenance.state-machine :as fp]
             [nusa.cells.cultivation-license-plan.state-machine :as lic]
