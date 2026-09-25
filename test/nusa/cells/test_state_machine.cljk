@@ -2,7 +2,7 @@
   "State-machine tests for nusa 幣 cells (R0). Native CLJC state-machine suite
   (ADR-2606039800). fiber_provenance (G1/G2) + cultivation_license_plan (G1/G4/G5/G8) +
   observation_bridge (G3 routing); .solve() raises at R0."
-  (:require [kotoba.test :refer [deftest is]]
+  (:require [kotoba.lang.error :as kerror] [kotoba.test :refer [deftest is]]
             [kotoba.lang.text :as str]
             [nusa.cells.fiber-provenance.state-machine :as fp]
             [nusa.cells.cultivation-license-plan.state-machine :as lic]
@@ -25,17 +25,17 @@
   (is (= "fiber" (get-in (provenance :thc-class ":fiber" :fiber-use ["aratae"]) ["cell_state" "payload" "thcClass"]))))
 
 (deftest test-fiber-provenance-rejects-psychoactive
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G1 violation" (provenance :thc-class "psychoactive"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G1 violation" (provenance :thc-class "psychoactive"))))
 
 (deftest test-fiber-provenance-rejects-high-thc-keyword
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G1 violation"
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G1 violation"
                         (fp/transition-to-screened {"cell_state" {} "cultivar" "x" "thc_class" ":high-thc"}))))
 
 (deftest test-fiber-provenance-rejects-consumption-use
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G2 violation" (provenance :fiber-use ["smoking"]))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G2 violation" (provenance :fiber-use ["smoking"]))))
 
 (deftest test-fiber-provenance-record-requires-screen
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"THC-class screen"
+  (is (thrown-with-msg? kerror/ExceptionInfo #"THC-class screen"
                         (fp/transition-to-recorded {"cell_state" {"screened" false}}))))
 
 ;; ── cultivation_license_plan (G1/G4/G5/G8) ──
@@ -56,19 +56,19 @@
     (is (= "member" (get p "signedBy")))))              ; G5
 
 (deftest test-license-rejects-org-funding
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G4 violation" (license :funding-source "org-treasury"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G4 violation" (license :funding-source "org-treasury"))))
 
 (deftest test-license-refuses-server-signature
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G5 violation" (license :server-sig "server-sig"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G5 violation" (license :server-sig "server-sig"))))
 
 (deftest test-license-requires-member-signature
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"member signature" (license :member-sig ""))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"member signature" (license :member-sig ""))))
 
 (deftest test-license-rejects-psychoactive-cultivar
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"G1 violation" (license :thc-class "psychoactive"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"G1 violation" (license :thc-class "psychoactive"))))
 
 (deftest test-license-rejects-unknown-purpose
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"purpose" (license :purpose "recreational"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"purpose" (license :purpose "recreational"))))
 
 ;; ── observation_bridge (G3) ──
 (deftest test-observation-bridge-routes-off-actor
@@ -77,10 +77,10 @@
   (is (str/includes? (ob/route "cannabis-derived-medicine") "yakushi")))
 
 (deftest test-observation-bridge-rejects-unknown-concern
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"unknown concern" (ob/route "advocate-legalization"))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"unknown concern" (ob/route "advocate-legalization"))))
 
 ;; ── R0: .solve() raises ──
 (deftest test-solve-raises-at-r0
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"R0 scaffold" (fp/solve {})))
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"R0 scaffold" (lic/solve {})))
-  (is (thrown-with-msg? clojure.lang.ExceptionInfo #"R0 scaffold" (ob/solve {}))))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"R0 scaffold" (fp/solve {})))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"R0 scaffold" (lic/solve {})))
+  (is (thrown-with-msg? kerror/ExceptionInfo #"R0 scaffold" (ob/solve {}))))
